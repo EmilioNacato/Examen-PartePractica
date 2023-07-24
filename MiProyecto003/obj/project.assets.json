@@ -1861,19 +1861,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\emili\\.nuget\\packages\\": {}
+    "C:\\Users\\falconis\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\emili\\Desktop\\Fundamentos-Blazor\\Colaboradores\\Emilio-Niacato\\MiProyecto003\\MiProyecto003.csproj",
+      "projectUniqueName": "C:\\Users\\falconis\\Desktop\\MiProyecto003\\MiProyecto003.csproj",
       "projectName": "MiProyecto003",
-      "projectPath": "C:\\Users\\emili\\Desktop\\Fundamentos-Blazor\\Colaboradores\\Emilio-Niacato\\MiProyecto003\\MiProyecto003.csproj",
-      "packagesPath": "C:\\Users\\emili\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\emili\\Desktop\\Fundamentos-Blazor\\Colaboradores\\Emilio-Niacato\\MiProyecto003\\obj\\",
+      "projectPath": "C:\\Users\\falconis\\Desktop\\MiProyecto003\\MiProyecto003.csproj",
+      "packagesPath": "C:\\Users\\falconis\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\falconis\\Desktop\\MiProyecto003\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\emili\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\falconis\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1935,7 +1935,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

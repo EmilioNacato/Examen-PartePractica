@@ -1,0 +1,70 @@
+﻿@page "/product"
+@using MiProyecto003.Services
+@using Blazored.Toast
+@inject IProductService productService
+@inject NavigationManager NavigationManager
+@inject IToastService toastService
+
+<h3>Lista de Productos</h3>
+<PageTitle>Products</PageTitle>
+
+<ModuleTitle Title="Products" />
+
+<button class="btn btn-dark" @onclick="@(() => NavigationManager.NavigateTo("/addproduct"))">Add Product</button>
+@if (products?.Count > 0)
+{
+    <div class="products-container">
+        @foreach (var product in products)
+        {
+            <div class="card">
+                <img class="card-img-top" src="@product.Images[0]" alt="Product" loading="lazy" width="270" height="210">
+                <div class="card-body">
+                    <h4><b>@product.Title</b></h4>
+                    <p>@product.Price?.ToString("C")</p>
+                </div>
+                <button @onclick="() => DeleteProduct(product)">Eliminar</button>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>No hay productos para mostrar</p>
+}
+
+@code
+{
+    private List<Product>? products;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            products = await productService.GetProducts();
+        }
+        catch (Exception ex)
+        {
+            toastService.ShowError("Error al obtener los productos.");
+            // Log the exception if needed: logger.LogError(ex, "Error al obtener los productos.");
+        }
+    }
+
+    private async Task DeleteProduct(Product product)
+    {
+        try
+        {
+            // Llamar al servicio para eliminar el producto
+            await productService.DeleteProduct(product.Id);
+
+            // Actualizar la lista de productos después de la eliminación
+            products?.Remove(product);
+
+            toastService.ShowSuccess("Producto eliminado correctamente.");
+        }
+        catch (Exception ex)
+        {
+            toastService.ShowError("Error al eliminar el producto.");
+            // Log the exception if needed: logger.LogError(ex, "Error al eliminar el producto.");
+        }
+    }
+}
